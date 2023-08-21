@@ -55,7 +55,7 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ${{ github.workspace }}/rinha-de-backend-2023-q3/stress-test/user-files/results/${{ env.GATLING_OUTPUT_FOLDER }}
           destination_dir: ${{ env.GATLING_OUTPUT_FOLDER }}
-      - run: echo "[Deploying to https://andersonef.github.io/rinha-backend-2023-q3/${{ env.GATLING_OUTPUT_FOLDER }}](https://andersonef.github.io/rinha-backend-2023-q3/${{ env.GATLING_OUTPUT_FOLDER }})" >> "${GITHUB_STEP_SUMMARY}"
+      - run: echo "https://andersonef.github.io/rinha-backend-2023-q3/${{ env.GATLING_OUTPUT_FOLDER }}" >> "${GITHUB_STEP_SUMMARY}"
 
 
 
