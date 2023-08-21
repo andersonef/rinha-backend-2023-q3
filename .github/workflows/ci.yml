@@ -28,6 +28,8 @@ jobs:
           wget https://repo1.maven.org/maven2/io/gatling/highcharts/gatling-charts-highcharts-bundle/3.9.5/gatling-charts-highcharts-bundle-3.9.5-bundle.zip
           unzip gatling-charts-highcharts-bundle-3.9.5-bundle.zip
           cd gatling-charts-highcharts-bundle-3.9.5
+          docker exec -t rinha-backend-2023-q3-api1-1 composer install
+          docker exec -it rinha-backend-2023-q3-api1-1 php artisan migrate
           docker ps
           docker logs rinha-backend-2023-q3-api1-1
           ./bin/gatling.sh -rm local -s RinhaBackendSimulation -rd "DESCRICAO" -rf $WORKSPACE/user-files/results -sf $WORKSPACE/user-files/simulations -rsf $WORKSPACE/user-files/resources
