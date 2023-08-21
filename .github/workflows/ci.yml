@@ -31,6 +31,8 @@ jobs:
           cd gatling-charts-highcharts-bundle-3.9.5
           docker exec -t rinha-api1 composer install
           docker exec -t rinha-api1 php artisan migrate
+          docker exec -t rinha-api1 php artisan route:cache
+          docker exec -t rinha-api1 php artisan config:cache
           docker ps
           docker logs rinha-backend-2023-q3-api1-1
           ./bin/gatling.sh -rm local -s RinhaBackendSimulation -rd "DESCRICAO" -rf $WORKSPACE/user-files/results -sf $WORKSPACE/user-files/simulations -rsf $WORKSPACE/user-files/resources
