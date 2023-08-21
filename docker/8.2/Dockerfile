@@ -45,7 +45,7 @@ COPY start-container /usr/local/bin/start-container
 COPY php.ini /etc/php/8.2/cli/conf.d/99-sail.ini
 COPY supervisord-octane.conf /etc/supervisor/conf.d/supervisord.conf
 RUN chmod +x /usr/local/bin/start-container
-RUN composer install --no-dev --no-interaction --no-progress --no-suggest --optimize-autoloader --no-scripts
+RUN composer install
 
 
 EXPOSE 8000
