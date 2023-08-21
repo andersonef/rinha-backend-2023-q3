@@ -35,10 +35,10 @@ jobs:
           docker exec rinha-api1 php artisan config:cache
           docker exec rinha-api1 php artisan octane:reload
 
-          docker exec rinha-api2 sleep 15
+
           docker exec rinha-api2 php artisan route:cache
           docker exec rinha-api2 php artisan config:cache
-          docker exec rinha-api2 php artisan octane:reload
+          docker exec rinha-api2 sleep 15
 
           git clone --single-branch --quiet https://github.com/zanfranceschi/rinha-de-backend-2023-q3
           cd rinha-de-backend-2023-q3
