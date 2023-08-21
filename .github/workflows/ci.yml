@@ -29,8 +29,9 @@ jobs:
           unzip gatling-charts-highcharts-bundle-3.9.5-bundle.zip
           cd gatling-charts-highcharts-bundle-3.9.5
           docker exec -t rinha-api1 cp .env.example .env
+          docker exec cat .env
           docker ps
-          docker logs rinha-backend-2023-q3-api1-1
+          docker logs rinha-api1
           docker exec -t rinha-api1 composer install
           docker exec -t rinha-api1 php artisan migrate
           docker exec -t rinha-api1 php artisan route:cache
