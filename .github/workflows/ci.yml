@@ -23,14 +23,14 @@ jobs:
       - run: bash sail up -d
       - name: Load test
         run: |
-          docker exec -t rinha-api1 cp .env.example .env
-          docker exec -t rinha-api1 cat .env
+          docker exec rinha-api1 cp .env.example .env
+          docker exec rinha-api1 cat .env
           docker ps
           docker logs rinha-api1
-          docker exec -t rinha-api1 composer install
-          docker exec -t rinha-api1 php artisan migrate
-          docker exec -t rinha-api1 php artisan route:cache
-          docker exec -t rinha-api1 php artisan config:cache
+          docker exec rinha-api1 composer install
+          docker exec rinha-api1 php artisan migrate
+          docker exec rinha-api1 php artisan route:cache
+          docker exec rinha-api1 php artisan config:cache
           git clone --single-branch --quiet https://github.com/zanfranceschi/rinha-de-backend-2023-q3
           cd rinha-de-backend-2023-q3
           wget https://repo1.maven.org/maven2/io/gatling/highcharts/gatling-charts-highcharts-bundle/3.9.5/gatling-charts-highcharts-bundle-3.9.5-bundle.zip
