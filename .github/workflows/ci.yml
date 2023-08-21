@@ -24,6 +24,7 @@ jobs:
       - name: Load test
         run: |
           docker exec rinha-api1 cp .env.example .env
+          docker exec rinha-api1 php artisan config:cache
           docker exec rinha-api1 cat .env
           docker ps
           docker logs rinha-api1
