@@ -36,6 +36,7 @@ jobs:
           docker exec rinha-api1 php artisan octane:reload
 
           docker exec rinha-api2 sleep 15
+          docker exec rinha-api2 bash docker/8.2/start-container
           docker exec rinha-api2 php artisan route:cache
           docker exec rinha-api2 php artisan config:cache
           docker exec rinha-api2 php artisan octane:reload
