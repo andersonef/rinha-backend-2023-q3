@@ -26,15 +26,16 @@ jobs:
           docker exec rinha-api1 cp .env.example .env
           docker exec rinha-api1 composer install
           docker exec rinha-api1 php artisan config:cache
+          docker exec rinha-api1 sleep 15
           docker exec rinha-api2 composer install
           docker exec rinha-api2 php artisan config:cache
-          sleep 15
           docker ps
           docker exec rinha-api1 php artisan migrate
           docker exec rinha-api1 php artisan route:cache
           docker exec rinha-api1 php artisan config:cache
           docker exec rinha-api1 php artisan octane:reload
 
+          docker exec rinha-api2 sleep 15
           docker exec rinha-api2 php artisan route:cache
           docker exec rinha-api2 php artisan config:cache
           docker exec rinha-api2 php artisan octane:reload
