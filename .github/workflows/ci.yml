@@ -15,7 +15,7 @@ jobs:
 #        run: bash sail up -d
   test:
     runs-on: ubuntu-20.04
-    needs: build
+#    needs: build
     permissions:
       contents: write
     steps:
